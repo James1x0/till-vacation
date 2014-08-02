@@ -1,0 +1,30 @@
+.app-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 100px;
+
+  background: url('cancun.jpg') bottom no-repeat;
+
+  transition: all ease-in-out 0.25s;
+}
+
+.text-wrapper {
+  padding: 20px;
+  margin: 120px auto;
+  background: rgba(0, 0, 0, 0.65);
+  color: white !important;
+}
+
+.app-wrapper.bump {
+  padding: 100px 60px;
+}
+
+h1, h2 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}

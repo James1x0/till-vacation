@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Vacation is not that far away...</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <div class="text-wrapper">
+        <h1 class="time"></h1>
+        <h2>Until Vacation...</h2>
+      </div>
+    </div>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="moment.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      +function () {
+        var eta = "2014/09/14 07:33",
+            days = 80, // Use as starting days
+            colorMultiplier = 255 / days,
+            etaMoment = moment(eta, "YYYY/MM/DD HH:mm");
+
+        var didBump;
+
+        setInterval(setTime, 1000);
+        setInterval(bump, 500);
+
+        function setTime () {
+          var now = moment(),
+              e   = etaMoment;
+
+          $('.time').html(
+            e.diff(now, "M") +
+            " Months or " +
+            e.diff(now, "d") +
+            " Days or " +
+            e.diff(now, "h") +
+            " Hours or " +
+            e.diff(now, "m") +
+            " Minutes or " +
+            e.diff(now, "s") +
+            " Seconds"
+          );
+
+          $('.text-wrapper').css({
+            background: 'rgba(0, ' + Math.round( ( days - e.diff(now, "d") ) * colorMultiplier ) + ', 0, 0.65)'
+          });
+        }
+
+        function bump () {
+          $('.app-wrapper').toggleClass('bump');
+        }
+
+        setTime();
+      }();
+    </script>
+  </body>
+</html>
