@@ -8,19 +8,30 @@
   padding: 100px;
 
   background: url('cancun.jpg') bottom no-repeat;
-
-  transition: all ease-in-out 0.25s;
 }
 
 .text-wrapper {
   padding: 20px;
-  margin: 120px auto;
+  margin: 50px auto;
   background: rgba(0, 0, 0, 0.65);
+  color: white !important;
+
+  transform: scale(1);
+  transition: all ease-in-out 0.25s;
+}
+
+.prog-wrapper {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.65);
   color: white !important;
 }
 
-.app-wrapper.bump {
-  padding: 100px 60px;
+.prog-wrapper .progress {
+  margin: 0;
+}
+
+.text-wrapper.bump {
+  transform: scale(1.05);
 }
 
 h1, h2 {
